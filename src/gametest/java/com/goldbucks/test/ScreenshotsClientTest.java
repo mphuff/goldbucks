@@ -136,6 +136,9 @@ public class ScreenshotsClientTest implements FabricClientGameTest {
 
 			world.getServer().runCommand("time set 2000");
 			world.getServer().runCommand("weather clear");
+			// No "game mode updated" and similar messages in the chat.
+			world.getServer().runCommand("gamerule send_command_feedback false");
+			world.getServer().runCommand("gamerule sendCommandFeedback false");
 			world.getServer().runCommand("host set townsfolkEnabled true");
 			world.getServer().runOnServer(server -> {
 				var player = server.getPlayerList().getPlayers().get(0);
@@ -213,6 +216,7 @@ public class ScreenshotsClientTest implements FabricClientGameTest {
 			settle(context, world, 220);
 			shot(context, "town-square");
 			world.getServer().runCommand("gamemode survival @a");
+			world.getServer().runCommand("host event stop");
 
 			// The Town Store, the Town Board and the host settings.
 			command(context, "store");

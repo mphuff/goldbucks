@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Builds the website into a folder, ready for GitHub Pages.
 
-    scripts/build-site.py OUT_DIR SHA256 DATE
+    scripts/build-site.py OUT_DIR SHA256 DATE JAR_BYTES
 
 Fills in the version and Minecraft version (from gradle.properties), the checksum and build date
-(from the arguments) and the newest changelog entries (from CHANGELOG.md).
+and download size (from the arguments) and the newest changelog entries (from CHANGELOG.md).
 """
 import html
 import re
@@ -58,9 +58,12 @@ def changes():
 
 
 def main():
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 5:
         sys.exit(__doc__)
     out, sha256, date = Path(sys.argv[1]), sys.argv[2], sys.argv[3]
+    if not sys.argv[4].isdigit() or int(sys.argv[4]) <= 0:
+        sys.exit(f"Not a file size in bytes: {sys.argv[4]}")
+    size = f"{round(int(sys.argv[4]) / 1024)} KB"
     if not re.fullmatch(r"[0-9a-f]{64}", sha256):
         sys.exit(f"Not a SHA-256 checksum: {sha256}")
     if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date):
@@ -83,15 +86,16 @@ def main():
         "SHA256": sha256,
         "DATE": date,
         "YEAR": date[:4],
+        "SIZE": size,
         "CHANGES": changes(),
     }.items():
         page = page.replace("{{" + key + "}}", value)
     left = re.findall(r"\{\{\w+\}\}", page)
     if left:
         sys.exit(f"Unfilled placeholders: {left}")
-    for image in re.findall(r'src="(images/[^"]+)"', page):
-        if not (out / image).exists():
-            sys.exit(f"Missing image: {image}")
+    for link in re.findall(r'(?:src|href|data-full)="([^"#:]+)"', page) + re.findall(r'(images/[^\s",]+)', page):
+        if not (out / link).exists():
+            sys.exit(f"Missing file: {link}")
     (out / "index.html").write_text(page)
     print(f"Built the site for Goldbucks {version} in {out}")
 

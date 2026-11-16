@@ -4,140 +4,307 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Goldbucks</title>
-<meta name="description" content="Goldbucks: a jobs-and-money mod for Minecraft Java {{MC_VERSION}} (Fabric). Pick a job, run a shop, earn Goldbucks and build up your town.">
-<meta property="og:title" content="Goldbucks">
-<meta property="og:description" content="A jobs-and-money mod for Minecraft Java {{MC_VERSION}} (Fabric).">
+<meta name="description" content="Goldbucks is a jobs-and-money mod for Minecraft Java {{MC_VERSION}} (Fabric). Pick a job, open a shop, earn Goldbucks and build up your town.">
+<meta name="theme-color" content="#0e0f12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Goldbucks: run a town in Minecraft">
+<meta property="og:description" content="Jobs, shops, a town square and a Mayor, all paid in Goldbucks. A Fabric mod for Minecraft Java {{MC_VERSION}}.">
+<meta property="og:url" content="https://mphuff.github.io/goldbucks/">
 <meta property="og:image" content="https://mphuff.github.io/goldbucks/images/town-square.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" href="images/icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
-  <div class="wrap hero-inner">
-    <img class="logo" src="images/icon.png" width="128" height="128" alt="A gold coin with a dollar sign">
-    <div>
-      <h1>Goldbucks</h1>
-      <p class="tagline">Pick a job, open a shop, earn Goldbucks and build up your town. A jobs-and-money mod for playing Minecraft with family and friends.</p>
-      <ul class="badges" aria-label="Works with">
-        <li>Minecraft Java {{MC_VERSION}}</li>
-        <li>Fabric</li>
-        <li>Version {{VERSION}}</li>
-      </ul>
-      <div class="download">
-        <a class="button" href="https://github.com/mphuff/goldbucks/releases/latest/download/goldbucks.jar">Download Goldbucks {{VERSION}}</a>
-        <p class="file-facts">Built {{DATE}} &middot; <a href="https://github.com/mphuff/goldbucks/releases">All versions</a></p>
-        <p class="file-facts checksum">SHA-256 <code>{{SHA256}}</code></p>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="Goldbucks home">
+      <img src="images/icon.png" width="28" height="28" alt="">
+      <span>Goldbucks</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#changelog">Changelog</a></li>
+    </ul>
+    <a class="btn btn-small" href="https://github.com/mphuff/goldbucks/releases/latest/download/goldbucks.jar">Download</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Fabric mod &middot; Minecraft Java {{MC_VERSION}}</p>
+      <h1>Run a town.<br>Earn <span class="gold">Goldbucks</span>.</h1>
+      <p class="hero-sub">Pick a job, open a shop and get paid every Minecraft day. Fill orders on the Town Board, sell to townsfolk, run for Mayor and save up for a bigger house. Made for playing with family and friends.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/mphuff/goldbucks/releases/latest/download/goldbucks.jar">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+          Download {{VERSION}}
+        </a>
+        <a class="btn btn-ghost" href="#features">See what it does</a>
+      </div>
+      <p class="meta">
+        <span>{{SIZE}}</span><span>Built {{DATE}}</span><span>Free to play</span>
+      </p>
+    </div>
+    <div class="hero-shot">
+      <img src="images/town-square-960.jpg" srcset="images/town-square-960.jpg 960w, images/town-square.jpg 1920w" sizes="(max-width: 900px) 100vw, 640px" width="1920" height="1080" alt="The town square from above on Market Day, with the side bar showing a player's cash and net worth" fetchpriority="high">
+      <div class="toast" aria-hidden="true">
+        <img src="images/icon.png" width="32" height="32" alt="">
+        <div><b>Payday!</b><span>You earned $8</span></div>
       </div>
     </div>
   </div>
 </header>
 
-<main>
+<main id="main">
 
-<section class="wrap">
-  <h2>What it is</h2>
-  <p class="lead">Everyone gets a house, a job and $20. Do your job each Minecraft day to get paid, sell things from your own shop, fill orders on the Town Board and save up for upgrades. There is no way to win: the fun is in running a business and watching the side bar to see who is worth the most.</p>
-  <p class="lead">Goldbucks only runs in worlds where you switch it on. All your other worlds stay normal Minecraft.</p>
-</section>
-
-<section class="wrap" aria-labelledby="gallery-title">
-  <h2 id="gallery-title">Screenshots</h2>
-  <div class="gallery">
-    <figure><a href="images/town-square.jpg"><img src="images/town-square.jpg" loading="lazy" width="1920" height="1080" alt="The town square from above on Market Day, with the side bar showing cash and net worth"></a><figcaption>The town square on Market Day</figcaption></figure>
-    <figure><a href="images/job-menu.jpg"><img src="images/job-menu.jpg" loading="lazy" width="1920" height="1080" alt="The job menu listing each job and its daily pay"></a><figcaption>Pick a job on your first day</figcaption></figure>
-    <figure><a href="images/shop-customer.jpg"><img src="images/shop-customer.jpg" loading="lazy" width="1920" height="1080" alt="A shop chest with a price sign and a villager customer"></a><figcaption>Townsfolk shop at your stall</figcaption></figure>
-    <figure><a href="images/house-upgrades.jpg"><img src="images/house-upgrades.jpg" loading="lazy" width="1920" height="1080" alt="A wooden house with a porch, second floor, garden and stone tower"></a><figcaption>Upgrade your house</figcaption></figure>
-    <figure><a href="images/town-store.jpg"><img src="images/town-store.jpg" loading="lazy" width="1920" height="1080" alt="The Town Store menu with house upgrades and prices"></a><figcaption>The Town Store</figcaption></figure>
-    <figure><a href="images/town-board.jpg"><img src="images/town-board.jpg" loading="lazy" width="1920" height="1080" alt="The Town Board menu listing orders and what they pay"></a><figcaption>Orders on the Town Board</figcaption></figure>
-    <figure><a href="images/morning-herald.jpg"><img src="images/morning-herald.jpg" loading="lazy" width="1920" height="1080" alt="Payday at dawn with the morning newspaper in chat"></a><figcaption>Payday and the morning news</figcaption></figure>
-    <figure><a href="images/host-settings.jpg"><img src="images/host-settings.jpg" loading="lazy" width="1920" height="1080" alt="The host settings screen with tabs of numbers and switches"></a><figcaption>Settings for the host</figcaption></figure>
-    <figure><a href="images/create-world-switch.jpg"><img src="images/create-world-switch.jpg" loading="lazy" width="1920" height="1080" alt="The Create World game rules screen with the Goldbucks switch"></a><figcaption>Switch it on for the worlds you choose</figcaption></figure>
+<section class="stats" aria-label="Goldbucks in numbers">
+  <div class="wrap stats-grid">
+    <div><b>9</b><span>jobs to choose from</span></div>
+    <div><b>21</b><span>town events</span></div>
+    <div><b>3</b><span>job levels with perks</span></div>
+    <div><b>1</b><span>Mayor, elected by you</span></div>
   </div>
 </section>
 
-<section class="wrap" aria-labelledby="features-title">
-  <h2 id="features-title">Features</h2>
-  <div class="features">
-    <article><h3>Nine jobs</h3><p>Vehicle Dealer, Store Owner, Banker, Cook, Builder, Salesperson, Farmer, Taxi Driver and Librarian. Each has a daily task and its own pay.</p></article>
-    <article><h3>Your own shop</h3><p>Claim a plot, put a chest and a <code>[Shop]</code> sign on it, and set a price. Other players and townsfolk buy from you.</p></article>
-    <article><h3>The town square</h3><p>A Town Board of paid orders, a Town Clerk, a Taxi Stand and a lectern with the morning news.</p></article>
-    <article><h3>The Town Store</h3><p>House upgrades, a bigger plot, pets, a name colour, a shop banner, fireworks and adverts.</p></article>
-    <article><h3>Levels and achievements</h3><p>Work your job to become Skilled, Expert and Master, with better pay and a perk at each level. Achievements pay small rewards.</p></article>
-    <article><h3>A Mayor</h3><p>Run for Mayor on Election Day with a promise, and win votes. The Mayor sets the tax rate and declares a holiday.</p></article>
-    <article><h3>Town events</h3><p>Market Day every week, plus Fishing Season, Tourist Day, Treasure Hunt, Lost Pet and more.</p></article>
-    <article><h3>Money that matters</h3><p>Payday, savings at the bank, credit down to -$100, a weekly tax, and bought tools that wear out.</p></article>
-    <article><h3>Friendly by design</h3><p>No monsters and no dying. Players gather and craft everything themselves.</p></article>
+<section class="section" id="features">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">How it plays</p>
+      <h2>A real economy, still very much Minecraft.</h2>
+      <p>Everyone gets a house, a job and $20. You gather and craft everything yourself, as usual. There is no way to win: the fun is in running a business and watching the side bar to see who is worth the most.</p>
+    </header>
+
+    <article class="feature">
+      <div class="feature-copy">
+        <p class="eyebrow">Jobs and payday</p>
+        <h3>Everyone has a job to do.</h3>
+        <p>Choose a job on your first day. Do its task once each Minecraft day and you are paid at dawn.</p>
+        <ul class="points">
+          <li>Nine jobs, from Taxi Driver to Banker, each with its own pay</li>
+          <li>Work your job to become Skilled, Expert and then Master</li>
+          <li>Every level pays more and unlocks a perk</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="images/job-menu-960.jpg" srcset="images/job-menu-960.jpg 960w, images/job-menu.jpg 1920w" sizes="(max-width: 900px) 100vw, 600px" loading="lazy" width="1920" height="1080" alt="The job menu listing each job and its daily pay"></figure>
+    </article>
+
+    <article class="feature flip">
+      <div class="feature-copy">
+        <p class="eyebrow">Shops</p>
+        <h3>Open a shop. Set your price.</h3>
+        <p>Claim a plot, put out a chest, and write <code>[Shop]</code> and a price on a sign. The game tells you straight away whether your shop is open.</p>
+        <ul class="points">
+          <li>Other players buy with a right-click</li>
+          <li>Townsfolk walk over and buy if the price is fair, and tell you if it isn't</li>
+          <li>Spend down to -$100 on credit, paid back from your wages</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="images/shop-customer-960.jpg" srcset="images/shop-customer-960.jpg 960w, images/shop-customer.jpg 1920w" sizes="(max-width: 900px) 100vw, 600px" loading="lazy" width="1920" height="1080" alt="A shop chest with a sign reading Shop, $2, Fresh bread, and a villager customer beside it"></figure>
+    </article>
+
+    <article class="feature">
+      <div class="feature-copy">
+        <p class="eyebrow">The town square</p>
+        <h3>Something to do every day.</h3>
+        <p>The square next to spawn is where the town happens, whether or not anyone else is online.</p>
+        <ul class="points">
+          <li>The Town Board posts orders that pay, and they count as your daily task</li>
+          <li>The Herald brings the morning news: who sold what, and what's on</li>
+          <li>Market Day every week, plus Treasure Hunts, Tourist Days and more</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="images/town-board-960.jpg" srcset="images/town-board-960.jpg 960w, images/town-board.jpg 1920w" sizes="(max-width: 900px) 100vw, 600px" loading="lazy" width="1920" height="1080" alt="The Town Board listing orders, what they ask for and what they pay"></figure>
+    </article>
+
+    <article class="feature flip">
+      <div class="feature-copy">
+        <p class="eyebrow">The Town Store</p>
+        <h3>Save up for something big.</h3>
+        <p>Spend your Goldbucks at the Town Store. Everything you keep counts toward your net worth on the side bar.</p>
+        <ul class="points">
+          <li>House upgrades: a porch, garden, pool, stable, second floor and tower</li>
+          <li>A bigger plot, pets, a name colour and a banner for your shop</li>
+          <li>Fireworks, adverts, and your own headline in the news</li>
+        </ul>
+      </div>
+      <figure class="shot"><img src="images/house-upgrades-960.jpg" srcset="images/house-upgrades-960.jpg 960w, images/house-upgrades.jpg 1920w" sizes="(max-width: 900px) 100vw, 600px" loading="lazy" width="1920" height="1080" alt="A wooden house with a porch, a second floor, a garden and a stone tower"></figure>
+    </article>
+
+    <div class="more">
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l4.5 4L12 5l4.5 7L21 8l-2 11H5z"/></svg>
+        <h4>A Mayor</h4>
+        <p>Run on a promise and win the vote. The Mayor sets the tax rate, names the town and declares a holiday.</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l9-6 9 6M5 10v8m4.67-8v8m4.66-8v8M19 10v8M3 21h18"/></svg>
+        <h4>The bank</h4>
+        <p>Savings are safe from the weekly tax and earn interest once someone is the town's Banker.</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4m8-4v4"/></svg>
+        <h4>Town events</h4>
+        <p>Fishing Season, Lost Pet, Tourist Day and more start at dawn, with a bar at the top of the screen.</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15h18l-3 5H6zM12 3v12m0-11 6 8h-6"/></svg>
+        <h4>Taxi rides</h4>
+        <p>Passengers wait at the Taxi Stand. Pick them up by boat and take them where their name tag says.</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4m8-4h3a3 3 0 0 1-3 4m-4 3v4m-4 3h8"/></svg>
+        <h4>Achievements</h4>
+        <p>A Goldbucks tab in the advancements screen, and each one pays a small reward.</p>
+      </article>
+      <article>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h4>Friendly by design</h4>
+        <p>No monsters and no dying, so younger players can focus on building their business.</p>
+      </article>
+    </div>
   </div>
 </section>
 
-<section class="wrap two-col">
-  <div>
-    <h2>What you need</h2>
-    <ul class="ticks">
-      <li>Minecraft Java Edition {{MC_VERSION}}</li>
-      <li><a href="https://fabricmc.net/use/installer/">Fabric Loader</a> for {{MC_VERSION}}</li>
-      <li><a href="https://modrinth.com/mod/fabric-api">Fabric API</a> for {{MC_VERSION}}</li>
-      <li>The same Goldbucks version on every computer that joins</li>
-    </ul>
-  </div>
-  <div>
-    <h2>For the host</h2>
-    <ul class="ticks">
-      <li>Switch it on when you create a world: <b>More &gt; Game Rules</b>, search <code>gold</code>, turn <b>Goldbucks</b> on. Or type <code>/goldbucks on</code> in a world you already have.</li>
-      <li><code>/host settings</code> opens a screen with every number and switch. It checks your changes before saving.</li>
-      <li>Prices, store items, orders and event names are data files you can change with a data pack.</li>
-    </ul>
+<section class="section alt" id="screenshots">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">Screenshots</p>
+      <h2>Have a look around.</h2>
+    </header>
+    <div class="gallery">
+      <button type="button" data-full="images/town-square.jpg" data-caption="The town square on Market Day"><img src="images/town-square-960.jpg" loading="lazy" width="960" height="540" alt="The town square on Market Day"></button>
+      <button type="button" data-full="images/job-menu.jpg" data-caption="Pick a job on your first day"><img src="images/job-menu-960.jpg" loading="lazy" width="960" height="540" alt="The job menu"></button>
+      <button type="button" data-full="images/shop-customer.jpg" data-caption="A townsfolk customer at a bread stall"><img src="images/shop-customer-960.jpg" loading="lazy" width="960" height="540" alt="A shop with a customer"></button>
+      <button type="button" data-full="images/town-store.jpg" data-caption="The Town Store"><img src="images/town-store-960.jpg" loading="lazy" width="960" height="540" alt="The Town Store menu"></button>
+      <button type="button" data-full="images/house-upgrades.jpg" data-caption="A house with every upgrade"><img src="images/house-upgrades-960.jpg" loading="lazy" width="960" height="540" alt="A house with upgrades"></button>
+      <button type="button" data-full="images/town-board.jpg" data-caption="Orders on the Town Board"><img src="images/town-board-960.jpg" loading="lazy" width="960" height="540" alt="The Town Board"></button>
+      <button type="button" data-full="images/morning-herald.jpg" data-caption="Payday at dawn, with the morning news"><img src="images/morning-herald-960.jpg" loading="lazy" width="960" height="540" alt="Payday and the morning news"></button>
+      <button type="button" data-full="images/host-settings.jpg" data-caption="The host's settings screen"><img src="images/host-settings-960.jpg" loading="lazy" width="960" height="540" alt="The host settings screen"></button>
+      <button type="button" data-full="images/create-world-switch.jpg" data-caption="Switch it on only in the worlds you choose"><img src="images/create-world-switch-960.jpg" loading="lazy" width="960" height="540" alt="The Goldbucks switch on the Create World screen"></button>
+    </div>
   </div>
 </section>
 
-<section class="wrap" aria-labelledby="faq-title">
-  <h2 id="faq-title">Questions</h2>
-  <details>
-    <summary>I installed it but nothing happens.</summary>
-    <p>Goldbucks is off until you switch it on in a world. When creating a world, open <b>More &gt; Game Rules</b>, search for <code>gold</code> and turn <b>Goldbucks</b> on. In a world you already have, the host types <code>/goldbucks on</code>. <code>/goldbucks status</code> says whether it is on.</p>
-  </details>
-  <details>
-    <summary>My friend can't join my world.</summary>
-    <p>Every computer needs the same version of Minecraft, Fabric API and Goldbucks. Download the newest Goldbucks on each one and remove any older Goldbucks jar from the mods folder.</p>
-  </details>
-  <details>
-    <summary>Can I change the prices or the pay?</summary>
-    <p>Yes. The host types <code>/host settings</code> for pay, taxes, limits and switches. Item values, store items, orders and events are data files: copy them from the mod jar into a data pack in the world's <code>datapacks</code> folder, change them, and type <code>/reload</code>.</p>
-  </details>
-  <details>
-    <summary>Will it change my other worlds?</summary>
-    <p>No. Goldbucks does nothing in a world unless it is switched on there. Switching it off with <code>/goldbucks off</code> keeps everyone's money and jobs in case you switch it back on.</p>
-  </details>
-  <details>
-    <summary>Does it work on a server or with Bedrock?</summary>
-    <p>It is made for Java Edition, with one player hosting a world opened to LAN. It is not tested on dedicated servers, and it does not work on Bedrock.</p>
-  </details>
-  <details>
-    <summary>How do I know the download is the real file?</summary>
-    <p>Each download comes from this project's releases on GitHub. Its SHA-256 checksum is shown above the download button and on the release page, so you can compare it with the file you got.</p>
-  </details>
+<section class="section" id="setup">
+  <div class="wrap setup-grid">
+    <div class="card">
+      <p class="eyebrow">What you need</p>
+      <h3>Requirements</h3>
+      <ul class="checks">
+        <li>Minecraft Java Edition {{MC_VERSION}}</li>
+        <li><a href="https://fabricmc.net/use/installer/">Fabric Loader</a> for {{MC_VERSION}}</li>
+        <li><a href="https://modrinth.com/mod/fabric-api">Fabric API</a> for {{MC_VERSION}}</li>
+        <li>The same Goldbucks version on every computer that joins</li>
+      </ul>
+    </div>
+    <div class="card">
+      <p class="eyebrow">For the host</p>
+      <h3>Only in the worlds you choose</h3>
+      <p>Goldbucks is off until you switch it on. On the Create World screen, open <b>More&nbsp;›&nbsp;Game Rules</b>, search <code>gold</code> and turn <b>Goldbucks</b> on. In a world you already have, type:</p>
+      <pre><code>/goldbucks on</code></pre>
+      <p><code>/host settings</code> opens a screen with every number and switch, and checks your changes before saving. Prices, store items, orders and events are data files you can change with a data pack.</p>
+    </div>
+  </div>
 </section>
 
-<section class="wrap" aria-labelledby="changes-title">
-  <h2 id="changes-title">What's new</h2>
-  <div class="changes">
+<section class="section alt" id="faq">
+  <div class="wrap faq-grid">
+    <header class="section-head">
+      <p class="eyebrow">FAQ</p>
+      <h2>Questions</h2>
+    </header>
+    <div class="faq">
+      <details>
+        <summary>I installed it but nothing happens.</summary>
+        <p>Goldbucks is off until you switch it on in a world. When creating a world, open <b>More › Game Rules</b>, search for <code>gold</code> and turn <b>Goldbucks</b> on. In a world you already have, the host types <code>/goldbucks on</code>. <code>/goldbucks status</code> says whether it is on.</p>
+      </details>
+      <details>
+        <summary>My friend can't join my world.</summary>
+        <p>Every computer needs the same version of Minecraft, Fabric API and Goldbucks. Download the newest Goldbucks on each one and remove any older Goldbucks jar from the mods folder.</p>
+      </details>
+      <details>
+        <summary>Can I change the prices or the pay?</summary>
+        <p>Yes. The host types <code>/host settings</code> for pay, taxes, limits and switches. Item values, store items, orders and events are data files: copy them from the mod jar into a data pack in the world's <code>datapacks</code> folder, change them, and type <code>/reload</code>.</p>
+      </details>
+      <details>
+        <summary>Will it change my other worlds?</summary>
+        <p>No. Goldbucks does nothing in a world unless it is switched on there. Switching it off with <code>/goldbucks off</code> keeps everyone's money and jobs in case you switch it back on.</p>
+      </details>
+      <details>
+        <summary>Does it work on a server or with Bedrock?</summary>
+        <p>It is made for Java Edition, with one player hosting a world opened to LAN. It is not tested on dedicated servers, and it does not work on Bedrock.</p>
+      </details>
+      <details>
+        <summary>How do I know the download is the real file?</summary>
+        <p>Every download comes from this project's releases on GitHub. Compare the file's SHA-256 checksum with this one, which is also on the release page:</p>
+        <div class="checksum">
+          <code id="sha">{{SHA256}}</code>
+          <button type="button" class="copy" data-copy="sha">Copy</button>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="changelog">
+  <div class="wrap faq-grid">
+    <header class="section-head">
+      <p class="eyebrow">Changelog</p>
+      <h2>What's new</h2>
+      <p><a href="https://github.com/mphuff/goldbucks/releases">All releases on GitHub →</a></p>
+    </header>
+    <div class="changes">
 {{CHANGES}}
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap final-inner">
+    <img src="images/icon.png" width="72" height="72" alt="">
+    <h2>Ready to open for business?</h2>
+    <a class="btn btn-primary" href="https://github.com/mphuff/goldbucks/releases/latest/download/goldbucks.jar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+      Download Goldbucks {{VERSION}}
+    </a>
+    <p class="meta"><span>For Minecraft Java {{MC_VERSION}}</span><span>Fabric</span><span>{{SIZE}}</span></p>
   </div>
 </section>
 
 </main>
 
-<footer>
-  <div class="wrap">
-    <p>Goldbucks &copy; {{YEAR}} Micah Huff. Free to download and play; everything else is reserved. See the <a href="https://github.com/mphuff/goldbucks/blob/main/LICENSE">licence</a>.</p>
-    <p>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
-    <p><a href="https://github.com/mphuff/goldbucks">Source and issues on GitHub</a></p>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="brand">
+      <img src="images/icon.png" width="24" height="24" alt="">
+      <span>Goldbucks</span>
+    </div>
+    <div class="footer-text">
+      <p>&copy; {{YEAR}} Micah Huff. Free to download and play; everything else is reserved. <a href="https://github.com/mphuff/goldbucks/blob/main/LICENSE">Licence</a> &middot; <a href="https://github.com/mphuff/goldbucks">Source and issues</a></p>
+      <p>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+    </div>
   </div>
 </footer>
 
+<dialog class="lightbox" aria-label="Screenshot">
+  <figure>
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
+  <button type="button" class="lb-prev" aria-label="Previous screenshot">‹</button>
+  <button type="button" class="lb-next" aria-label="Next screenshot">›</button>
+  <button type="button" class="lb-close" aria-label="Close">×</button>
+</dialog>
+
+<script src="site.js" defer></script>
 </body>
 </html>
