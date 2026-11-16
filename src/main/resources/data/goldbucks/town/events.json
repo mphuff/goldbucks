@@ -1,0 +1,86 @@
+{
+	"market_day": {
+		"name": "Market Day",
+		"description": "Townsfolk come shopping in crowds, and there are extra orders."
+	},
+	"fishing_season": {
+		"name": "Fishing Season",
+		"description": "Townsfolk want boats and fishing rods, and pay double for them."
+	},
+	"railway_week": {
+		"name": "Railway Week",
+		"description": "Lay a rail line from the town square to the neighborhood. $40 when it connects."
+	},
+	"harvest_festival": {
+		"name": "Harvest Festival",
+		"description": "Farm orders pay double, and the town wants pumpkin pie."
+	},
+	"town_feast": {
+		"name": "Town Feast",
+		"description": "The town wants a feast: big food orders. $10 for whoever fills the most."
+	},
+	"tourist_day": {
+		"name": "Tourist Day",
+		"description": "Tourists wait at the Taxi Stand. Each one taken to a shop buys two things there."
+	},
+	"rainy_day_rides": {
+		"name": "Rainy Day Rides",
+		"description": "Nobody wants to walk in the rain. Passenger orders pay double."
+	},
+	"book_fair": {
+		"name": "Book Fair",
+		"description": "Townsfolk buy written books, and there are book orders. The host picks the best story."
+	},
+	"treasure_hunt": {
+		"name": "Treasure Hunt",
+		"description": "A treasure chest is buried near town. Follow the clues in the news!"
+	},
+	"grand_opening": {
+		"name": "Grand Opening",
+		"description": "A new shop opened! It gets extra townsfolk visits today."
+	},
+	"big_sale_day": {
+		"name": "Big Sale Day",
+		"description": "Double townsfolk visits to shops priced at or below value."
+	},
+	"construction_boom": {
+		"name": "Construction Boom",
+		"description": "Fill the marked area at the town square with blocks. $30 to share."
+	},
+	"storm_repairs": {
+		"name": "Storm Repairs",
+		"description": "The storm knocked down fences and lanterns at the square. $3 for each one put back."
+	},
+	"gold_rush": {
+		"name": "Gold Rush",
+		"description": "Gold orders pay double."
+	},
+	"interest_day": {
+		"name": "Interest Day",
+		"description": "Money saved at the bank today earns double interest."
+	},
+	"election_day": {
+		"name": "Election Day",
+		"description": "Run for Mayor with /mayor run, and vote with /vote. Voting closes at the end of the day."
+	},
+	"holiday": {
+		"name": "Holiday",
+		"description": "The Mayor declared a holiday! $5 for everyone, and fireworks at the square."
+	},
+	"night_market": {
+		"name": "Night Market",
+		"description": "Full moon! Shops with a lantern or torch by the sign get double visits."
+	},
+	"lost_pet": {
+		"name": "Lost Pet",
+		"description": "Whiskers the cat is lost! Bring her back to the town square."
+	},
+	"shop_inspector": {
+		"name": "Shop Inspector",
+		"description": "An inspector checks every shop. Full stock and fair prices earn $10."
+	},
+	"contest": {
+		"name": "Contest",
+		"description": "The host has started a contest!"
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "goldbucks",
+	"version": "${version}",
+	"name": "Goldbucks",
+	"description": "Run a town in Minecraft: jobs, shops, villager customers, a Town Store, a Mayor and events, all paid in Goldbucks.",
+	"authors": [
+		"Micah Huff"
+	],
+	"license": "LicenseRef-All-Rights-Reserved",
+	"icon": "assets/goldbucks/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.goldbucks.GoldbucksMod"
+		],
+		"client": [
+			"com.goldbucks.client.GoldbucksModClient"
+		]
+	},
+	"mixins": [
+		"goldbucks.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	},
+	"contact": {
+		"homepage": "https://mphuff.github.io/goldbucks/",
+		"sources": "https://github.com/mphuff/goldbucks",
+		"issues": "https://github.com/mphuff/goldbucks/issues"
+	}
+}

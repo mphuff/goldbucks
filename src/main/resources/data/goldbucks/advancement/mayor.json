@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:welcome",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:golden_apple"
+		},
+		"title": "Mr or Madam Mayor",
+		"description": "Win an election",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

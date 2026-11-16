@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:club_500",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:emerald_block"
+		},
+		"title": "$1,000 Club",
+		"description": "Reach a net worth of $1,000",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

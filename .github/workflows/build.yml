@@ -1,0 +1,62 @@
+name: Build mod
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+
+      - uses: gradle/actions/setup-gradle@v4
+
+      - name: Check no old names have crept back in
+        run: scripts/name-audit.sh
+
+      - name: Build and test
+        run: ./gradlew build
+
+      - name: Collect the mod jar
+        run: |
+          mkdir dist
+          cp $(ls build/libs/goldbucks-*.jar | grep -v -- '-sources') dist/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: goldbucks-mod
+          path: dist/*.jar
+
+      # Stable releases come only from main, once per version number.
+      # Each release also carries goldbucks.jar, so a link to the latest release's goldbucks.jar
+      # always downloads the newest stable version.
+      - name: Publish release
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(grep '^version=' gradle.properties | cut -d= -f2)
+          if gh release view "v$VERSION" >/dev/null 2>&1; then
+            echo "Release v$VERSION already exists; leaving it as it is."
+            exit 0
+          fi
+          cp "dist/goldbucks-$VERSION.jar" dist/goldbucks.jar
+          sha256sum "dist/goldbucks-$VERSION.jar" | cut -d' ' -f1 > dist/goldbucks.jar.sha256
+          gh release create "v$VERSION" "dist/goldbucks-$VERSION.jar" dist/goldbucks.jar dist/goldbucks.jar.sha256 \
+            --target "$GITHUB_SHA" \
+            --title "Goldbucks $VERSION" \
+            --notes "Goldbucks $VERSION for Minecraft 26.3 (Fabric). Put the jar in your Minecraft mods folder, replacing any older Goldbucks jar. SHA-256: $(cat dist/goldbucks.jar.sha256)"

@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:homeowner",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:bell"
+		},
+		"title": "Dream House",
+		"description": "Own every home upgrade",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

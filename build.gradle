@@ -1,0 +1,70 @@
+plugins {
+	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+}
+
+loom {
+	splitEnvironmentSourceSets()
+
+	mods {
+		"goldbucks" {
+			sourceSet sourceSets.main
+			sourceSet sourceSets.client
+		}
+	}
+}
+
+fabricApi {
+	configureTests {
+		createSourceSet = true
+		modId = "goldbucks-test"
+		enableGameTests = true
+		enableClientGameTests = true
+		eula = true // Needed to start the test server. See https://aka.ms/MinecraftEULA
+	}
+}
+
+dependencies {
+	// Versions live in gradle.properties
+	minecraft "com.mojang:minecraft:${project.minecraft_version}"
+	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
+	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+
+	testImplementation "net.fabricmc:fabric-loader-junit:${project.loader_version}"
+}
+
+test {
+	useJUnitPlatform()
+
+	testLogging {
+		events "failed"
+		exceptionFormat "full"
+	}
+}
+
+processResources {
+	def version = project.version
+	inputs.property "version", version
+
+	filesMatching("fabric.mod.json") {
+		expand "version": version
+	}
+}
+
+java {
+	withSourcesJar()
+
+	// Minecraft 26.x needs Java 25 (see gradle/gradle-daemon-jvm.properties).
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
+}
+
+tasks.withType(JavaCompile).configureEach {
+	it.options.release = 25
+}
+
+// Start every in-game test run from an empty world so saved money and jobs cannot leak between runs.
+tasks.matching { it.name == "runGameTest" }.configureEach {
+	doFirst {
+		delete layout.buildDirectory.dir("run/gameTest/world")
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:first_job",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:golden_helmet"
+		},
+		"title": "Tycoon",
+		"description": "Own two businesses at once",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

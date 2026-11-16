@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:first_job",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:oak_sign"
+		},
+		"title": "Open for Business",
+		"description": "Open your first shop",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

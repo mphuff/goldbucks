@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "goldbucks-test",
+	"version": "1.0.0",
+	"name": "Goldbucks tests",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.goldbucks.test.TestSetup"
+		],
+		"fabric-gametest": [
+			"com.goldbucks.test.FoundationGameTest",
+			"com.goldbucks.test.WorldRulesGameTest",
+			"com.goldbucks.test.JobsGameTest",
+			"com.goldbucks.test.PlotsGameTest",
+			"com.goldbucks.test.HousesGameTest",
+			"com.goldbucks.test.ShopGameTest",
+			"com.goldbucks.test.BusinessGameTest",
+			"com.goldbucks.test.HostCommandsGameTest",
+			"com.goldbucks.test.SettingsGameTest",
+			"com.goldbucks.test.TownGameTest",
+			"com.goldbucks.test.ProgressGameTest",
+			"com.goldbucks.test.ActivationGameTest"
+		],
+		"fabric-client-gametest": [
+			"com.goldbucks.test.SidebarClientTest",
+			"com.goldbucks.test.JobMenuClientTest",
+			"com.goldbucks.test.TownClientTest",
+			"com.goldbucks.test.PlainWorldClientTest"
+		]
+	}
+}

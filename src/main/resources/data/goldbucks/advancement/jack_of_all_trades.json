@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:skilled",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:bundle"
+		},
+		"title": "Jack of All Trades",
+		"description": "Reach Skilled in three different jobs",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

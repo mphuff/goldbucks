@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:welcome",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:milk_bucket"
+		},
+		"title": "Debt-Free",
+		"description": "Get from debt back to $0 or more",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

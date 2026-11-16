@@ -1,0 +1,20 @@
+[
+	{"id": "porch", "name": "Porch", "price": 40, "description": "A covered porch with a bench by your front door."},
+	{"id": "garden", "name": "Garden", "price": 60, "description": "A fenced flower and vegetable patch behind your house."},
+	{"id": "basement", "name": "Basement", "price": 120, "description": "A room under your house, with a ladder down."},
+	{"id": "second_floor", "name": "Second floor", "price": 200, "description": "A full upstairs room with windows and a ladder."},
+	{"id": "stable", "name": "Stable", "price": 150, "description": "A stable beside your house, with hay and a water trough."},
+	{"id": "pool", "name": "Pool", "price": 200, "description": "A small pool in your garden.", "requires": "garden"},
+	{"id": "tower", "name": "Lookout tower", "price": 350, "description": "A tall tower on your roof with a view.", "requires": "second_floor"},
+	{"id": "bigger_plot", "name": "Bigger plot", "price": 150, "size": 24, "description": "Your business plot grows to 24 by 24."},
+	{"id": "biggest_plot", "name": "Biggest plot", "price": 300, "size": 32, "description": "Your business plot grows to 32 by 32.", "requires": "bigger_plot"},
+	{"id": "cat", "name": "Cat", "price": 40, "description": "A tame cat that follows you home."},
+	{"id": "wolf", "name": "Wolf", "price": 50, "description": "A tame wolf that follows you."},
+	{"id": "parrot", "name": "Parrot", "price": 60, "description": "A tame parrot that rides on your shoulder."},
+	{"id": "axolotl", "name": "Axolotl", "price": 40, "description": "An axolotl in a bucket."},
+	{"id": "name_colour", "name": "Name colour", "price": 30, "description": "Your name in a colour you pick. Changing it later costs $10."},
+	{"id": "shop_banner", "name": "Shop banner", "price": 25, "description": "A banner to design on the loom, and a glowing OPEN sign."},
+	{"id": "fireworks", "name": "Fireworks show", "price": 15, "description": "Fireworks over your house. Used up when it goes off."},
+	{"id": "advert", "name": "Advert", "price": 10, "description": "2 extra townsfolk visits to your shops today."},
+	{"id": "herald_ad", "name": "Herald ad", "price": 8, "description": "One line about your shop in tomorrow's morning news."}
+]

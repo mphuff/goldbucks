@@ -1,0 +1,24 @@
+{
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:emerald"
+		},
+		"title": "Welcome to Town",
+		"description": "Join a Goldbucks world",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": false,
+		"hidden": false,
+		"background": "minecraft:gui/advancements/backgrounds/stone"
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:first_sale",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:clock"
+		},
+		"title": "Rush Hour",
+		"description": "Make 5 sales in one day",
+		"frame": "goal",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

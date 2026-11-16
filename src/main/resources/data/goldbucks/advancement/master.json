@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:expert",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:nether_star"
+		},
+		"title": "Master",
+		"description": "Reach Master in any job",
+		"frame": "challenge",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}

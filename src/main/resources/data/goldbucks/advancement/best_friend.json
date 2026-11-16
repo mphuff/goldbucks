@@ -1,0 +1,24 @@
+{
+	"parent": "goldbucks:welcome",
+	"criteria": {
+		"done": {
+			"trigger": "minecraft:impossible"
+		}
+	},
+	"display": {
+		"icon": {
+			"id": "minecraft:bone"
+		},
+		"title": "Best Friend",
+		"description": "Buy a pet",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"requirements": [
+		[
+			"done"
+		]
+	]
+}
