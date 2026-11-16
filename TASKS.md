@@ -140,7 +140,7 @@ Built from [DESIGN-TOWN.md](DESIGN-TOWN.md), all in one version.
 - [x] 18.2 Issue 6, not enough wheat: a one-time farming kit for every player, a farming page in the guide book, hints on the board for where things come from, and smaller first crop orders. Test: game `HousesGameTest.newPlayersGetAFarmingKitOnce`; unit `TownDataTest.shippedDataIsValid`.
 - [x] 18.3 Issue 8, out-of-memory crash: no memory leak found in the mod (a 300-day soak and a real-time run with customers and events both stayed flat); the event bar now only sends changes; the README explains how to give Minecraft more memory. Test: manual soak (not in the normal suite, as it changes shared settings).
 
-## Website and public release (planned)
+## Website and public release
 
 A one-page download site on GitHub Pages, with the repository made public. Version 0.4.0 is the first Goldbucks release.
 
@@ -162,15 +162,15 @@ A one-page download site on GitHub Pages, with the repository made public. Versi
 ### Tasks
 
 - [x] 19.1 Choose the new name: **Goldbucks** (mod and currency). Repository renamed to `goldbucks`.
-- [x] 19.2 Rename everything to Goldbucks: code package (`com.goldbucks`), mod id (`goldbucks`), command (`/goldbucks`), game rule (`goldbucks:goldbucks`), world files, item data, chat, screens, side bar, guide book, Herald, advancements, README, design docs, build and jar names. New pixel-art coin artwork and icon (`scripts/draw-goldbuck.py`). Old worlds upgrade by themselves (`Legacy.java`: files moved, old on-switch carried over, old item data and old name tags handled), and Goldbucks stays off with a message if the old jar is still installed. Test: game `LegacyGameTest`; all other tests renamed and passing.
+- [x] 19.2 Rename everything to Goldbucks: code package (`com.goldbucks`), mod id (`goldbucks`), command (`/goldbucks`), game rule (`goldbucks:goldbucks`), world files, item data, chat, screens, side bar, guide book, Herald, advancements, README, design docs, build and jar names. New pixel-art coin artwork and icon (`scripts/draw-goldbuck.py`). No upgrade path from the old name (decided: not needed). All tests renamed and passing.
 - [x] 19.2a Name audit: `scripts/name-audit.sh` fails the build if an old name appears anywhere; it runs in the GitHub build.
 - [x] 19.3 Licence: free to download and play; everything else reserved.
 - [x] 19.4 Pre-public check: no secrets, passwords, email addresses or usernames in the files or history. The history, old tags and old releases still contain the old name and artwork; see 19.5.
-- [ ] 19.5 Create `main` as a fresh start (one commit with today's files, no old history), make it the default branch, and delete the old branches, tags and releases. The build now publishes stable releases only from `main`, each with a fixed-name `goldbucks.jar` and its checksum.
-- [ ] 19.6 Re-shoot screenshots at double resolution in a normal generated world, with a plain player name: town square on Market Day, Town Store, job menu, side bar with cash and worth, house with upgrades, host settings, the Create World switch.
-- [ ] 19.7 Build the page (`site/`): dark mod-site style with a free pixel heading font; hero with download button and Fabric / Minecraft 26.3 / version badges; gallery; features; requirements; host section (game rule, `/host settings`, data packs); FAQ (nothing happens = switch is off; every computer needs the same version; can I change prices); changelog; footer with licence and disclaimer. Works on phones, light and dark.
-- [ ] 19.8 Build step that publishes the page on each stable release, filling in the version, download link, checksum, date and changelog.
-- [ ] 19.9 Micah: make the repository public and turn on Pages (Settings > Pages > Source: GitHub Actions).
+- [x] 19.5 Create `main` as a fresh start (one commit with today's files, no old history), make it the default branch, and delete the old branches, tags and releases. The build now publishes stable releases only from `main`, each with a fixed-name `goldbucks.jar` and its checksum.
+- [x] 19.6 Re-shoot screenshots at 1920×1080 in a normal generated world, with a plain player name: town square on Market Day, Town Store, Town Board, job menu, side bar with cash and worth, house with upgrades, a shop with a customer, payday and the Herald, host settings. Made by `ScreenshotsClientTest` (`GOLDBUCKS_SHOTS=$PWD/site/images XVFB_SCREEN=1920x1080x24 scripts/client-test.sh`, then `scripts/site-images.py`).
+- [x] 19.7 Build the page (`site/`): dark mod-site style with a free pixel heading font; hero with download button and Fabric / Minecraft 26.3 / version badges; gallery; features; requirements; host section (game rule, `/host settings`, data packs); FAQ (nothing happens = switch is off; every computer needs the same version; can I change prices); changelog; footer with licence and disclaimer. Works on phones, light and dark.
+- [x] 19.8 Build step that publishes the page on each stable release, filling in the version, download link, checksum, date and changelog (`scripts/build-site.py`, the `pages` job in `build.yml`, `CHANGELOG.md`). Every build checks the page still builds.
+- [x] 19.9 Micah: make the repository public and turn on Pages (Settings > Pages > Source: GitHub Actions).
 - [ ] 19.10 Check the live site at phone and desktop widths, and check the download button returns the real jar while signed out.
 
 ## Blocked or needs a decision

@@ -5,5 +5,5 @@ set -e
 cd "$(dirname "$0")/.."
 export SDL_VIDEO_FORCE_EGL=1 LIBGL_ALWAYS_SOFTWARE=1 ALSOFT_DRIVERS=null
 export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-$(mktemp -d)}"
-exec timeout 600 xvfb-run -a -s "-screen 0 1280x720x24 +extension GLX +render -noreset" \
+exec timeout 900 xvfb-run -a -s "-screen 0 ${XVFB_SCREEN:-1280x720x24} +extension GLX +render -noreset" \
 	./gradlew runClientGameTest --max-workers=2 "$@"

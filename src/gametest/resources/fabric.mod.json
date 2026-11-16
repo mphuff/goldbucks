@@ -26,7 +26,8 @@
 			"com.goldbucks.test.SidebarClientTest",
 			"com.goldbucks.test.JobMenuClientTest",
 			"com.goldbucks.test.TownClientTest",
-			"com.goldbucks.test.PlainWorldClientTest"
+			"com.goldbucks.test.PlainWorldClientTest",
+			"com.goldbucks.test.ScreenshotsClientTest"
 		]
 	}
 }

@@ -20,3 +20,7 @@ run/
 
 # macOS
 .DS_Store
+
+# Website screenshots straight from the game; the site uses the JPEGs made from them.
+site/images/*.png
+_site/

@@ -7,7 +7,7 @@ The rules are in [DESIGN.md](DESIGN.md), the planned town update is in [DESIGN-T
 
 1. Install Fabric Loader for Minecraft 26.3 with the installer from fabricmc.net.
 2. Download Fabric API for 26.3 and put the `.jar` in your Minecraft `mods` folder.
-3. Download `goldbucks-<version>.jar` from this repo's Releases page and put it in the same `mods` folder. Remove any older Goldbucks jar first.
+3. Download `goldbucks.jar` from https://mphuff.github.io/goldbucks/ (or this repo's Releases page) and put it in the same `mods` folder. Remove any older Goldbucks jar first.
 4. Start Minecraft with the Fabric profile. Every Mac must use the same mod version.
 
 On a Mac the mods folder is `~/Library/Application Support/minecraft/mods`.
@@ -108,6 +108,12 @@ scripts/client-test.sh
 ```
 
 This runs the on-screen tests in a headless game client (Linux only) and saves screenshots to `build/run/clientGameTest/screenshots`.
+
+**Website.** The page is in `site/` and is published to https://mphuff.github.io/goldbucks/ by the build on `main`, filled in from `gradle.properties`, the release's checksum and `CHANGELOG.md` (add an entry for each new version). To retake its screenshots:
+
+```bash
+XVFB_SCREEN=1920x1080x24 GOLDBUCKS_SHOTS=$PWD/site/images scripts/client-test.sh && scripts/site-images.py
+```
 
 ## Licence
 

@@ -31,6 +31,9 @@ jobs:
       - name: Build and test
         run: ./gradlew build
 
+      - name: Check the website builds
+        run: python3 scripts/build-site.py "$RUNNER_TEMP/site-check" "$(printf '0%.0s' {1..64})" 2000-01-01
+
       - name: Collect the mod jar
         run: |
           mkdir dist
@@ -56,7 +59,48 @@ jobs:
           fi
           cp "dist/goldbucks-$VERSION.jar" dist/goldbucks.jar
           sha256sum "dist/goldbucks-$VERSION.jar" | cut -d' ' -f1 > dist/goldbucks.jar.sha256
+          {
+            echo "Goldbucks $VERSION for Minecraft 26.3 (Fabric). Put the jar in your Minecraft mods folder, replacing any older Goldbucks jar."
+            echo
+            awk -v v="## $VERSION" '$0 == v {on = 1; next} /^## / {on = 0} on' CHANGELOG.md
+            echo
+            echo "SHA-256: \`$(cat dist/goldbucks.jar.sha256)\`"
+          } > "$RUNNER_TEMP/notes.md"
           gh release create "v$VERSION" "dist/goldbucks-$VERSION.jar" dist/goldbucks.jar dist/goldbucks.jar.sha256 \
             --target "$GITHUB_SHA" \
             --title "Goldbucks $VERSION" \
-            --notes "Goldbucks $VERSION for Minecraft 26.3 (Fabric). Put the jar in your Minecraft mods folder, replacing any older Goldbucks jar. SHA-256: $(cat dist/goldbucks.jar.sha256)"
+            --notes-file "$RUNNER_TEMP/notes.md"
+
+  # The website, https://mphuff.github.io/goldbucks/, rebuilt from main after each build there,
+  # so it always shows the newest stable release.
+  pages:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build the website
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(grep '^version=' gradle.properties | cut -d= -f2)
+          gh release download "v$VERSION" --pattern goldbucks.jar.sha256 --dir "$RUNNER_TEMP/release"
+          DATE=$(gh release view "v$VERSION" --json publishedAt --jq '.publishedAt[0:10]')
+          python3 scripts/build-site.py _site "$(tr -d '[:space:]' < "$RUNNER_TEMP/release/goldbucks.jar.sha256")" "$DATE"
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
